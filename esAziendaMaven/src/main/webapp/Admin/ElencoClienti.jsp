@@ -93,11 +93,18 @@
 											<%-- 							<td class="center"><c:out value="${u.password}" /></td> --%>
 											<td class="center"><c:out value="${u.ragSociale}" /></td>
 											<td class="center"><c:out value="${u.pIVA}" /></td>
-											<td class="center"><a class="btn btn-info" href="#">
+											<td class="center">
+											
+											<form action="doCancellaUtente.jsp" method="get">
+													<input type="hidden" value="${u.id_utente}"
+														name="id_utente" />
+											<button type="submit" class="btn btn-info" >
 													<i class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</a>
+											</button>
+										
+										
 												
-												<form action="doCancellaUtente.jsp" method="get">
+<!-- 												<form action="doCancellaUtente.jsp" method="get"> -->
 													<input type="hidden" value="${u.id_utente}"
 														name="id_utente" />
 													<button type="submit" class="btn btn-danger">
@@ -119,7 +126,7 @@
 		</div>
 	</div>
 </div>
-</div>
+
 
 <hr>
 

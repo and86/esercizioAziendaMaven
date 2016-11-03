@@ -12,8 +12,8 @@
 		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 
 		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
-		<property name="connection.username">azienda</property>
-		<property name="connection.password">azienda</property>
+		<property name="connection.username">azienda2</property>
+		<property name="connection.password">azienda2</property>
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">1</property>
 		<!-- SQL dialect -->
