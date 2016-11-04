@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-
-
 <jsp:include page=".././headerHtml.jsp"></jsp:include>
 <jsp:include page=".././navBar.jsp"></jsp:include>
 <jsp:include page="menuLateraleAdmin.jsp"></jsp:include>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:useBean id="admin" class="it.alfasoft.andrea.bean.Admin"
 	scope="session" />
@@ -16,11 +16,11 @@
 	if (admin.isValid()) {
 %>
 
-<!DOCTYPE html >
-<html>
+<!-- <!DOCTYPE html > -->
+<!-- <html> -->
 <div class="ch-container">
 	<div class="row">
-
+		
 
 		<div id="content" class="col-lg-10 col-sm-10">
 			<!-- content starts -->
@@ -33,19 +33,22 @@
 				</ul>
 
 				<div class="row">
+				
 					<div class="box col-md-12">
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
+								
 								<h2>
 									<i class="glyphicon glyphicon-th-plus"></i> Registrazione
 									Cliente
 								</h2>
 
-								
+
 							</div>
 
 
 							<div class="box-content" align="center">
+							<font size="4" color="red"><%=messaggio.getMessaggio()%></font>
 								<form class="form-horizontal" action="doRegistraCliente.jsp"
 									method="post">
 									<div class="form-group">
@@ -61,8 +64,7 @@
 											required><br> <label>PartitaIva</label><br>
 										<input type="text" name="pIva" placeholder="Enter partita iva"
 											required><br> <br> <input type="submit"
-											class="btn btn-primary" value="Registra"> <br> <font
-											size="4" color="red"><%=messaggio.getMessaggio()%></font>
+											class="btn btn-primary" value="Registra"> <br>
 									</div>
 								</form>
 							</div>

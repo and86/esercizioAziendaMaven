@@ -99,7 +99,7 @@ public class AdminDao {
 						tx=session.getTransaction();
 						tx.begin();
 						
-						Query query = session.createQuery("from Admin where nome=:nomeInserito &&"
+						Query query = session.createQuery("from Utente where nome=:nomeInserito &&"
 								+ "cognome=:cognomeInserito");
 						query.setString("nomeInserito", nome);
 						query.setString("cognomeInserito", cognome);

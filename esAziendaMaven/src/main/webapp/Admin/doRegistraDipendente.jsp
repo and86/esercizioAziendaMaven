@@ -8,7 +8,7 @@
 
 <jsp:useBean id="user" class="it.alfasoft.andrea.bean.Utente"
 	scope="session" />
-<jsp:setProperty property="*" name="user" />
+<%-- <jsp:setProperty property="*" name="user" /> --%>
 <jsp:useBean id="messaggio"
 	class="it.alfasoft.andrea.utility.MessaggioBean" scope="request" />
 
@@ -30,7 +30,7 @@ Dipendente d=new Dipendente(nome,cognome,username,password,'d',ps,stipendio_d);
 
 Servizi s=new Servizi();
 
-if(d.isValid() && s.leggiUtenteConUser(username)==null){
+if(d.isValid() && s.getUtente(username)==null){
 	password=s.codificaPass(password);
 	d.setPassword(password);
 	s.registraDipendente(d);
@@ -38,7 +38,7 @@ if(d.isValid() && s.leggiUtenteConUser(username)==null){
 
 	
 %>
-<jsp:forward page="HomePageAdmin.jsp" />
+<jsp:forward page="ElencoDipendenti.jsp" />
 <% 
 }else {
 	messaggio.setMessaggio("Campi non validi e/o user già in uso");

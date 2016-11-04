@@ -41,9 +41,7 @@ public class BustaPaga implements Serializable{
 
 	public void setId_bustaPaga(long id_bustaPaga) {
 		this.id_bustaPaga = id_bustaPaga;
-	}
-
-	
+	}	
 
 	public String getDataEmissione() {
 		return DataEmissione;

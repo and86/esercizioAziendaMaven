@@ -21,7 +21,7 @@ public class Cliente extends Utente implements Serializable,ValidaDati {
 
 	
 	public Cliente() {
-		super();
+		
 	}
 
 	public Cliente(String nome, String cognome,

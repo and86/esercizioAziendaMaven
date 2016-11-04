@@ -73,7 +73,7 @@ public class VoceDao {
 
 	}
 
-	// 3 - Read (con rubrica, nome,cognome)
+	// 3 - Read (con id_rubrica, nome,cognome)
 	public Voce leggiVoce(long id_rubrica,String nome, String cognome) {
 		Voce v = null;
 		
@@ -87,7 +87,7 @@ public class VoceDao {
 			tx.begin();
 
 			Query query = session
-					.createQuery("from Voce where id_Rubrica=:idRubricaInserito and"
+					.createQuery("from Voce where Rubrica_id_Rubrica=:idRubricaInserito and"
 							+ " nome=:nomeInserito and"
 							+ "cognome=:cognomeInserito");
 

@@ -31,7 +31,7 @@
     <link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
 
 <!--     jQuery -->
-   <script src="bower_components/jquery/jquery.min.js"></script>
+   <script src="${pageContext.request.contextPath}bower_components/jquery/jquery.min.js"></script>
 
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->

@@ -7,6 +7,8 @@
 <jsp:include page=".././navBar.jsp"></jsp:include>
 <jsp:include page="menuLateraleAdmin.jsp"></jsp:include>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <jsp:useBean id="admin" class="it.alfasoft.andrea.bean.Admin"
 	scope="session" />
 <jsp:useBean id="messaggio"
@@ -16,8 +18,8 @@
 	if (admin.isValid()) {
 %>
 
-<!DOCTYPE html >
-<html>
+<!-- <!DOCTYPE html > -->
+<!-- <html> -->
 <div class="ch-container">
 	<div class="row">
 
@@ -41,11 +43,12 @@
 									Dipendente
 								</h2>
 
-								
+
 							</div>
 
 
 							<div class="box-content" align="center">
+								<font size="4" color="red"><%=messaggio.getMessaggio()%></font>
 								<form class="form-horizontal" action="doRegistraDipendente.jsp"
 									method="post">
 									<div class="form-group">
@@ -57,12 +60,11 @@
 										<label>Password</label><br> <input type="password"
 											name="password" placeholder="Enter password" required><br>
 										<label>Posizione</label><br> <input type="text"
-											name="posizione" placeholder="Enter position"
-											required><br> <label>Stipendio</label><br>
-										<input type="number" name="stipendio" placeholder="Enter salary"
-											required><br> <br> <input type="submit"
-											class="btn btn-primary" value="Registra"> <br> <font
-											size="4" color="red"><%=messaggio.getMessaggio()%></font>
+											name="posizione" placeholder="Enter position" required><br>
+										<label>Stipendio</label><br> <input type="number"
+											name="stipendio" placeholder="Enter salary" required><br>
+										<br> <input type="submit" class="btn btn-primary"
+											value="Registra"> <br>
 									</div>
 								</form>
 							</div>

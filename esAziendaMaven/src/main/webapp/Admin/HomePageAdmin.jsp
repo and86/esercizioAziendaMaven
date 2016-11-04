@@ -20,8 +20,8 @@
 if (admin.isValid()) {
 %>
 	
-<!DOCTYPE html>
-<html>
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
 
 <div class="ch-container">
 	<div class="row">
@@ -42,6 +42,7 @@ if (admin.isValid()) {
 			</div>
 			<ul class="breadcrumb">
 				<li><a href="#">Home</a></li>
+				<li><a href="#">Admin</a></li>
 
 			</ul>
 			<div align="center"><font size="4" color="red"><%=messaggio.getMessaggio()%></font></div>
@@ -77,7 +78,7 @@ if (admin.isValid()) {
 <!--      includo tutti script di sotto -->
 <jsp:include page=".././scriptEndJs.jsp"></jsp:include>
 
-</html>
+<!-- </html> -->
 
 <%
  } else{

@@ -93,6 +93,35 @@ public class BustaPagaDao {
 		return buste;
 
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<BustaPaga> leggiTutteBustePaga() {
+		
+		List<BustaPaga> buste = new ArrayList<BustaPaga>();
+		
+		Session session = HibernateUtil.openSession();
+		Transaction tx = null;
+
+		try {
+			tx = session.getTransaction();
+			tx.begin();
+
+			Query query = session
+					.createQuery("from BustaPaga");
+
+			buste = query.list();
+
+			tx.commit();
+
+		} catch (Exception ex) {
+			tx.rollback();
+		} finally {
+			session.close();
+		}
+
+		return buste;
+		
+	}
 
 	// 4 Delete
 	public boolean eliminaBustaPaga(BustaPaga b) {
@@ -119,5 +148,7 @@ public class BustaPagaDao {
 		return res;
 
 	}
+
+	
 
 }
