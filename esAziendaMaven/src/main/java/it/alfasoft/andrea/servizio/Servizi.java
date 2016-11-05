@@ -88,6 +88,16 @@ public class Servizi {
 	public boolean eliminaUtenteConId(long id_u) {
 		return uDao.eliminaUtenteConId(id_u);
 	}
+	
+	public boolean eliminaClienteConId(long id_c) {
+		Cliente c=cDao.leggiClienteConId(id_c);
+		return cDao.eliminaCliente(c);
+	}
+	
+	public boolean eliminaDipendenteConId(long id_d) {
+		Dipendente d=dDao.leggiDipendenteConId(id_d);
+		return dDao.eliminaDipendente(d);
+	}
 
 	// Metodo codifica password
 	public String codificaPass(String pass) {

@@ -3,19 +3,24 @@
 	pageEncoding="ISO-8859-1"%>
 
 
-<jsp:useBean id="user" class="it.alfasoft.andrea.bean.Utente"
-	scope="session" />
+
 <jsp:useBean id="messaggio"
 	class="it.alfasoft.andrea.utility.MessaggioBean" scope="request" />
 
 <%
 	Servizi s = new Servizi();
-	long id = Long.parseLong(request.getParameter("id_utente"));
-	
-	s.eliminaUtenteConId(id);
 
-	messaggio.setMessaggio("Utente eliminato");
+long id = Long.parseLong(request.getParameter("id_utente"));
+	
+// out.println(id);
+
+s.eliminaClienteConId(id);
+
+// 	s.eliminaUtenteConId(id);
+
+	messaggio.setMessaggio("Cliente eliminato");
 	
 	%>
-<jsp:forward page="HomePageAdmin.jsp" />
+
+<jsp:forward page="ElencoClienti.jsp" />
 

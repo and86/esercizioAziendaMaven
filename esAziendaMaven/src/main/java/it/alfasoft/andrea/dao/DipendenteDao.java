@@ -175,7 +175,7 @@ public class DipendenteDao {
 						}
 						
 						//4 Delete
-						public boolean eliminaCliente(Dipendente d){
+						public boolean eliminaDipendente(Dipendente d){
 							
 							boolean res=false;
 							Session session =HibernateUtil.openSession();

@@ -95,16 +95,17 @@
 											<td class="center"><c:out value="${u.posizione}" /></td>
 											<td class="center"><c:out value="${u.stipendio}" /></td>
 											<td class="center">
-												<form action="doCancellaUtente.jsp" method="get">
-													<input type="hidden" value="${u.id_utente}"
-														name="id_utente" />
-											<button type="submit" class="btn btn-info" >
-													<i class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</button>
+												
+<!-- 												<form action="doCancellaUtente.jsp" method="get"> -->
+<%-- 													<input type="hidden" value="${u.id_utente}" --%>
+<!-- 														name="id_utente" /> -->
+<!-- 											<button type="submit" class="btn btn-info" > -->
+<!-- 													<i class="glyphicon glyphicon-edit icon-white"></i> Edit -->
+<!-- 											</button> -->
 										
 										
 												
-<!-- 												<form action="doCancellaUtente.jsp" method="get"> -->
+												<form action="doCancellaDipendente.jsp" method="post">
 													<input type="hidden" value="${u.id_utente}"
 														name="id_utente" />
 													<button type="submit" class="btn btn-danger">

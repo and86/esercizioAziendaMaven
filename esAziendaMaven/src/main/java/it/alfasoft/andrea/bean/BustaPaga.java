@@ -18,16 +18,17 @@ public class BustaPaga implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id_bustaPaga;
 	
-	private String DataEmissione;
+	
 	
 	
 	@ManyToOne
 	private Dipendente dipendente;
 	private double totale;
+	private String DataEmissione;
 	
 	public BustaPaga() {
-		this.DataEmissione="";
-		this.totale=0;
+//		this.DataEmissione="";
+//		this.totale=0;
 	}
 
 	public BustaPaga(String DataEmissione,double totale) {

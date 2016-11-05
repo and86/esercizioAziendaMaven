@@ -15,8 +15,8 @@
 
 <jsp:useBean id="admin" class="it.alfasoft.andrea.bean.Admin"
 	scope="session" />
-<jsp:useBean id="user" class="it.alfasoft.andrea.bean.Utente"
-	scope="session" />
+<%-- <jsp:useBean id="user" class="it.alfasoft.andrea.bean.Utente" --%>
+<%-- 	scope="session" /> --%>
 <jsp:useBean id="messaggio"
 	class="it.alfasoft.andrea.utility.MessaggioBean" scope="request" />
 
@@ -69,7 +69,6 @@
 										<th>Nome</th>
 										<th>Cognome</th>
 										<th>Username</th>
-										<!-- 						<th>Password</th> -->
 										<th>Ragione sociale</th>
 										<th>Partita iva</th>
 										<th>Actions</th>
@@ -90,21 +89,20 @@
 											<td class="center"><c:out value="${u.nome}" /></td>
 											<td class="center"><c:out value="${u.cognome}" /></td>
 											<td class="center"><c:out value="${u.username}" /></td>
-											<%-- 							<td class="center"><c:out value="${u.password}" /></td> --%>
 											<td class="center"><c:out value="${u.ragSociale}" /></td>
 											<td class="center"><c:out value="${u.pIVA}" /></td>
 											<td class="center">
 											
-											<form action="doCancellaUtente.jsp" method="get">
-													<input type="hidden" value="${u.id_utente}"
-														name="id_utente" />
-											<button type="submit" class="btn btn-info" >
-													<i class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</button>
+<!-- 											<form action="doCancellaUtente.jsp" method="get"> -->
+<%-- 													<input type="hidden" value="${u.id_utente}" --%>
+<!-- 														name="id_utente" /> -->
+<!-- 											<button type="submit" class="btn btn-info" > -->
+<!-- 													<i class="glyphicon glyphicon-edit icon-white"></i> Edit -->
+<!-- 											</button> -->
 										
 										
 												
-<!-- 												<form action="doCancellaUtente.jsp" method="get"> -->
+												<form action="doCancellaCliente.jsp" method="post">
 													<input type="hidden" value="${u.id_utente}"
 														name="id_utente" />
 													<button type="submit" class="btn btn-danger">
