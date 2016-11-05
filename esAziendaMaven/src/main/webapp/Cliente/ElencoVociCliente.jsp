@@ -93,10 +93,17 @@ if (cliente.isValid()) {
 											<td class="center"><c:out value="${u.cognome}" /></td>
 											<td class="center"><c:out value="${u.telefono}" /></td>
 											
-											<td class="center"><a class="btn btn-info" href="#">
-													<i class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</a>
-												<form action="doEliminaVoceCliente.jsp" method="get">
+											<td class="center">
+											
+											<form action="doModificaVoceCliente.jsp" method="post" style="float: left;">
+													<input type="hidden" value="${u.id_voce}"
+														name="id_voce" />
+													<button type="submit" class="btn btn-info">
+														Edit <i class="glyphicon glyphicon-edit icon-white"></i>
+													</button> &nbsp;
+													</form>
+													
+												<form action="doEliminaVoceCliente.jsp" method="post">
 													<input type="hidden" value="${u.id_voce}"
 														name="id_voce" />
 													<button type="submit" class="btn btn-danger">

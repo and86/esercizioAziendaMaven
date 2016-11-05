@@ -93,22 +93,24 @@
 											<td class="center"><c:out value="${u.pIVA}" /></td>
 											<td class="center">
 											
-<!-- 											<form action="doCancellaUtente.jsp" method="get"> -->
-<%-- 													<input type="hidden" value="${u.id_utente}" --%>
-<!-- 														name="id_utente" /> -->
-<!-- 											<button type="submit" class="btn btn-info" > -->
-<!-- 													<i class="glyphicon glyphicon-edit icon-white"></i> Edit -->
-<!-- 											</button> -->
-										
-										
-												
-												<form action="doCancellaCliente.jsp" method="post">
+											
+											<form action="ModificaCliente.jsp" method="post" style="float: left;">
+													<input type="hidden" value="${u.id_utente}"
+														name="id_utente" />
+													<button type="submit" class="btn btn-info">
+														Edit <i class="glyphicon glyphicon-edit icon-white"></i>
+													</button> &nbsp;
+													</form>
+
+												 <form action="doCancellaCliente.jsp" method="post" >
 													<input type="hidden" value="${u.id_utente}"
 														name="id_utente" />
 													<button type="submit" class="btn btn-danger">
 														Delete <i class="glyphicon glyphicon-trash icon-white"></i>
 													</button>
 												</form>
+												
+													
 
 											</td>
 										</tr>

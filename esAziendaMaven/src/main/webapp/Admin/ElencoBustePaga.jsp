@@ -1,7 +1,7 @@
-<%@page import="model.Rubrica"%>
-<%@page import="model.Voce"%>
+<%@page import="it.alfasoft.andrea.bean.BustaPaga"%>
 <%@page import="java.util.List"%>
 <%@page import="it.alfasoft.andrea.servizio.Servizi"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -9,19 +9,17 @@
 
 <jsp:include page=".././headerHtml.jsp"></jsp:include>
 <jsp:include page=".././navBar.jsp"></jsp:include>
-<jsp:include page="menuLateraleDip.jsp"></jsp:include>
+<jsp:include page="menuLateraleAdmin.jsp"></jsp:include>
 
 
 
-<jsp:useBean id="dipendente" class="it.alfasoft.andrea.bean.Dipendente"
+<jsp:useBean id="admin" class="it.alfasoft.andrea.bean.Admin"
 	scope="session" />
-
-
 <jsp:useBean id="messaggio"
 	class="it.alfasoft.andrea.utility.MessaggioBean" scope="request" />
 
 <%
-	if (dipendente.isValid()) {
+	if (admin.isValid()) {
 %>
 
 <div class="ch-container">
@@ -34,8 +32,8 @@
 
 
 				<ul class="breadcrumb">
-					<li><a href="HomePageDipendente.jsp">Home</a></li>
-					<li><a href="#">Elenco Voci Rubrica </a></li>
+					<li><a href="../Admin/HomePageAdmin.jsp">Home</a></li>
+					<li><a href="#">Elenco Buste Paga </a></li>
 				</ul>
 
 				<div class="row">
@@ -43,8 +41,7 @@
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
-									<i class="glyphicon glyphicon-th-list"></i> Elenco Voci nella
-									tua Rubrica
+									<i class="glyphicon glyphicon-th-list"></i> Elenco Buste Paga
 								</h2>
 
 								<div class="box-icon">
@@ -69,7 +66,8 @@
 									<tr>
 										<th>Nome</th>
 										<th>Cognome</th>
-										<th>Telefono</th>
+										<th>Data Emissione (mm-dd-yyyy)</th>
+										<th>Importo</th>
 										<th>Actions</th>
 									</tr>
 								</thead>
@@ -77,39 +75,31 @@
 
 									<%
 										Servizi s = new Servizi();
-											String usern = dipendente.getUsername();
-
-											Rubrica r = s.cercaRubricaConUser(usern);
-											List<Voce> lista = s.getVoci(r);
+											List<BustaPaga> lista = s.getListBuste();
 											session.setAttribute("lista", lista);
 									%>
 									<c:set var="i" value="1" scope="page" />
 
-									<c:forEach items="${lista}" var="u">
+									<c:forEach items="${lista}" var="b">
 
 										<tr>
-											<td class="center"><c:out value="${u.nome}" /></td>
-											<td class="center"><c:out value="${u.cognome}" /></td>
-											<td class="center"><c:out value="${u.telefono}" /></td>
-
+											<td class="center"><c:out value="${b.dipendente.nome}" /></td>
+											<td class="center"><c:out
+													value="${b.dipendente.cognome}" /></td>
+											<td class="center"><c:out value="${b.dataEmissione}" /></td>
+											<td class="center"><c:out value="${b.totale}" /></td>
 											<td class="center">
-											<form action="doModificaVoceDipendente.jsp" method="post" style="float: left;">
-													<input type="hidden" value="${u.id_voce}"
-														name="id_voce" />
-													<button type="submit" class="btn btn-info">
-														Edit <i class="glyphicon glyphicon-edit icon-white"></i>
-													</button> &nbsp;
-													</form>
-													
-												<form action="doEliminaVoceDipendente.jsp" method="post">
-													<input type="hidden" value="${u.id_voce}"
-														name="id_voce" />
+
+												<form action="doCancellaBustaPaga.jsp" method="get">
+													<input type="hidden" value="${b.id_bustaPaga}"
+														name="id_bustaPaga" />
 													<button type="submit" class="btn btn-danger">
 														Delete <i class="glyphicon glyphicon-trash icon-white"></i>
 													</button>
-												</form></td>
+												</form>
+
+											</td>
 										</tr>
-										<c:set var="i" value="${i + 1}" scope="page" />
 									</c:forEach>
 
 								</tbody>
@@ -121,7 +111,7 @@
 		</div>
 	</div>
 </div>
-</div>
+
 
 <hr>
 
