@@ -75,6 +75,12 @@ public class Servizi {
 	public List<Dipendente> getListDipendenti() {
 		return dDao.leggiTuttiDipendenti();
 	}
+	
+	//Metodi per aggiornare cliente e dipendente
+	public boolean aggiornaCliente(Cliente c) {
+		cDao.leggiClienteConId(c.getId_utente());
+		return cDao.aggiornaCliente(c);
+	}
 
 	// metodo per eliminare un utente
 	public boolean eliminaUtente(Utente u) {

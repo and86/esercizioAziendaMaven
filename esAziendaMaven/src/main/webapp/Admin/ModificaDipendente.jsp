@@ -35,7 +35,7 @@
 
 				<ul class="breadcrumb">
 					<li><a href="../Admin/HomePageAdmin.jsp">Home</a></li>
-					<li><a href="#">Modifica Cliente </a></li>
+					<li><a href="#">Modifica Dipendente </a></li>
 				</ul>
 
 				<div class="row">
@@ -45,7 +45,7 @@
 							<div class="box-header well" data-original-title="">
 								
 								<h2>
-									<i class="glyphicon glyphicon-edit"></i> Modifica Cliente
+									<i class="glyphicon glyphicon-edit"></i> Modifica Dipendente
 								</h2>
 
 
@@ -60,17 +60,15 @@ Utente u=s.getUtenteConId(id);
 
 							<div class="box-content" align="center">
 							<font size="4" color="red"><%=messaggio.getMessaggio()%></font>
-								<form class="form-horizontal" action="doModificaCliente.jsp"
+								<form class="form-horizontal" action="doModificaDipendente.jsp"
 									method="post">
-									<input type="hidden" value="${u.id_utente}"
-														name="id_utente" />
 									<div class="form-group">
-										<label>Nome</label><br> <input type="text" name="nome1" value=<%=u.getNome()%> ><br> 
-										<label>Cognome</label><br><input type="text" name="cognome1" value=<%=u.getNome()%>><br> 
-										<label>Username</label><br> <input type="text" name="username1" value=<%=u.getNome()%> ><br>
-										<label>Password</label><br> <input type="text" name="password1" value=<%=u.getNome()%>><br>
-										<label>Ragione Sociale</label><br> <input type="text" name="ragioneSociale1" value=<%=u.getNome()%>><br> 
-										<label>PartitaIva</label><br><input type="text" name="pIva1" value=<%=u.getNome()%> ><br> 
+										<label>Nome</label><br> <input type="text" nome="nome1" value=<%=u.getNome()%> ><br> 
+										<label>Cognome</label><br><input type="text" nome="cognome1" value=<%=u.getNome()%>><br> 
+										<label>Username</label><br> <input type="text" nome="username1" value=<%=u.getNome()%> ><br>
+										<label>Password</label><br> <input type="text" nome="password1" value=<%=u.getNome()%>><br>
+										<label>Ragione Sociale</label><br> <input type="text" nome="ragioneSociale1" value=<%=u.getNome()%>><br> 
+										<label>PartitaIva</label><br><input type="text" nome="pIva1" value=<%=u.getNome()%> ><br> 
 										<br> <input type="submit"
 											class="btn btn-primary" value="Modifica"> <br>
 									</div>
