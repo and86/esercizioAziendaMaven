@@ -97,11 +97,13 @@ public class Servizi {
 	
 	public boolean eliminaClienteConId(long id_c) {
 		Cliente c=cDao.leggiClienteConId(id_c);
+		uDao.eliminaUtenteConId(id_c);
 		return cDao.eliminaCliente(c);
 	}
 	
 	public boolean eliminaDipendenteConId(long id_d) {
 		Dipendente d=dDao.leggiDipendenteConId(id_d);
+		uDao.eliminaUtenteConId(id_d);
 		return dDao.eliminaDipendente(d);
 	}
 
