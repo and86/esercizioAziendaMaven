@@ -1,3 +1,4 @@
+<%@page import="it.alfasoft.andrea.bean.Dipendente"%>
 <%@page import="it.alfasoft.andrea.bean.Utente"%>
 <%@page import="it.alfasoft.andrea.servizio.Servizi"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -54,7 +55,7 @@
 Servizi s=new Servizi();
 long id=Long.parseLong(request.getParameter("id_utente"));
 
-Utente u=s.getUtenteConId(id);
+Dipendente d=(Dipendente)s.getUtenteConId(id);
 
 %>
 
@@ -63,12 +64,14 @@ Utente u=s.getUtenteConId(id);
 								<form class="form-horizontal" action="doModificaDipendente.jsp"
 									method="post">
 									<div class="form-group">
-										<label>Nome</label><br> <input type="text" nome="nome1" value=<%=u.getNome()%> ><br> 
-										<label>Cognome</label><br><input type="text" nome="cognome1" value=<%=u.getNome()%>><br> 
-										<label>Username</label><br> <input type="text" nome="username1" value=<%=u.getNome()%> ><br>
-										<label>Password</label><br> <input type="text" nome="password1" value=<%=u.getNome()%>><br>
-										<label>Ragione Sociale</label><br> <input type="text" nome="ragioneSociale1" value=<%=u.getNome()%>><br> 
-										<label>PartitaIva</label><br><input type="text" nome="pIva1" value=<%=u.getNome()%> ><br> 
+										<label>Nome</label><br> <input type="text" name="nome1" value=<%=d.getNome()%> ><br> 
+										<label>Cognome</label><br><input type="text" name="cognome1" value=<%=d.getCognome()%>><br> 
+										<label>Username</label><br> <input type="text" name="username1" value=<%=d.getUsername()%> ><br>
+										<label>Password</label><br> <input type="text" name="password1" value=<%=d.getPassword()%>><br>
+										<label>Posizione</label><br> <input type="text" name="posizione1" value=<%=d.getRuolo()%>><br> 
+										<label>Stipendio</label><br><input type="text" name="stipendio1" value=<%=d.getStipendio()%> ><br> 
+										<br><input type="hidden" value=<%=d.getId_utente()%>
+														name="id_utente" ><br> 
 										<br> <input type="submit"
 											class="btn btn-primary" value="Modifica"> <br>
 									</div>

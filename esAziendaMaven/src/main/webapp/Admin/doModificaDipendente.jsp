@@ -1,12 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@page import="it.alfasoft.andrea.bean.Dipendente"%>
+<%@page import="it.alfasoft.andrea.servizio.Servizi"%>
+<%@page import="it.alfasoft.andrea.bean.Cliente"%>
 
-</body>
-</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<jsp:useBean id="messaggio"
+	class="it.alfasoft.andrea.utility.MessaggioBean" scope="request" />
+
+<%
+long id=Long.parseLong(request.getParameter("id_utente"));
+
+Servizi s=new Servizi();
+Dipendente d =(Dipendente)s.getUtenteConId(id);
+
+String nome_m=request.getParameter("nome1");
+String cognome_m=request.getParameter("cognome1");
+String username_m=request.getParameter("username1");
+String password_m=request.getParameter("password1");
+String posizione_m=request.getParameter("posizione1");
+double stipendio_m=Double.parseDouble(request.getParameter("stipendio1"));
+
+d.setNome(nome_m);
+d.setCognome(cognome_m);
+d.setUsername(username_m);
+d.setPassword(s.codificaPass(password_m));
+d.setPosizione(posizione_m);
+d.setStipendio(stipendio_m);
+
+s.aggiornaDipendente(d);
+%>
+
+<jsp:forward page="ElencoClienti.jsp"></jsp:forward>
+
+
+
+

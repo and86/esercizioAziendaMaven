@@ -81,6 +81,10 @@ public class Servizi {
 		cDao.leggiClienteConId(c.getId_utente());
 		return cDao.aggiornaCliente(c);
 	}
+	
+	public boolean aggiornaDipendente(Dipendente d) {
+		return dDao.aggiornaDipendente(d);
+	}
 
 	// metodo per eliminare un utente
 	public boolean eliminaUtente(Utente u) {

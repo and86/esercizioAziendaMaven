@@ -1,3 +1,4 @@
+<%@page import="it.alfasoft.andrea.bean.Cliente"%>
 <%@page import="it.alfasoft.andrea.bean.Utente"%>
 <%@page import="it.alfasoft.andrea.servizio.Servizi"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -54,7 +55,8 @@
 Servizi s=new Servizi();
 long id=Long.parseLong(request.getParameter("id_utente"));
 
-Utente u=s.getUtenteConId(id);
+Cliente c=(Cliente)s.getUtenteConId(id);
+
 
 %>
 
@@ -62,16 +64,17 @@ Utente u=s.getUtenteConId(id);
 							<font size="4" color="red"><%=messaggio.getMessaggio()%></font>
 								<form class="form-horizontal" action="doModificaCliente.jsp"
 									method="post">
-									<input type="hidden" value="${u.id_utente}"
-														name="id_utente" />
+									
 									<div class="form-group">
-										<label>Nome</label><br> <input type="text" name="nome1" value=<%=u.getNome()%> ><br> 
-										<label>Cognome</label><br><input type="text" name="cognome1" value=<%=u.getNome()%>><br> 
-										<label>Username</label><br> <input type="text" name="username1" value=<%=u.getNome()%> ><br>
-										<label>Password</label><br> <input type="text" name="password1" value=<%=u.getNome()%>><br>
-										<label>Ragione Sociale</label><br> <input type="text" name="ragioneSociale1" value=<%=u.getNome()%>><br> 
-										<label>PartitaIva</label><br><input type="text" name="pIva1" value=<%=u.getNome()%> ><br> 
-										<br> <input type="submit"
+										<label>Nome</label><br> <input type="text" name="nome1" value=<%=c.getNome()%> ><br> 
+										<label>Cognome</label><br><input type="text" name="cognome1" value=<%=c.getCognome()%>><br> 
+										<label>Username</label><br> <input type="text" name="username1" value=<%=c.getUsername()%> ><br>
+										<label>Password</label><br> <input type="text" name="password1" value=<%=c.getPassword()%>><br>
+										<label>Ragione Sociale</label><br> <input type="text" name="ragioneSociale1" value=<%=c.getRagSociale()%>><br> 
+										<label>PartitaIva</label><br><input type="text" name="pIva1" value=<%=c.getpIVA()%> ><br> 
+										<br><input type="hidden" value=<%=c.getId_utente()%>
+														name="id_utente" ><br> 
+										<input type="submit"
 											class="btn btn-primary" value="Modifica"> <br>
 									</div>
 								</form>
