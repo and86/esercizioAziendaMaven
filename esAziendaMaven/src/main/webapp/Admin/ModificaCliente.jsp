@@ -69,7 +69,7 @@ Cliente c=(Cliente)s.getUtenteConId(id);
 										<label>Nome</label><br> <input type="text" name="nome1" value=<%=c.getNome()%> ><br> 
 										<label>Cognome</label><br><input type="text" name="cognome1" value=<%=c.getCognome()%>><br> 
 										<label>Username</label><br> <input type="text" name="username1" value=<%=c.getUsername()%> ><br>
-										<label>Password</label><br> <input type="text" name="password1" value=<%=c.getPassword()%>><br>
+										<label>Password</label><br> <input type="password" name="password1" required><br>
 										<label>Ragione Sociale</label><br> <input type="text" name="ragioneSociale1" value=<%=c.getRagSociale()%>><br> 
 										<label>PartitaIva</label><br><input type="text" name="pIva1" value=<%=c.getpIVA()%> ><br> 
 										<br><input type="hidden" value=<%=c.getId_utente()%>

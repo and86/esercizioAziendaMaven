@@ -32,7 +32,7 @@ d.setStipendio(stipendio_m);
 s.aggiornaDipendente(d);
 %>
 
-<jsp:forward page="ElencoClienti.jsp"></jsp:forward>
+<jsp:forward page="ElencoDipendenti.jsp"></jsp:forward>
 
 
 

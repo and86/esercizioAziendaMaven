@@ -67,7 +67,7 @@ Dipendente d=(Dipendente)s.getUtenteConId(id);
 										<label>Nome</label><br> <input type="text" name="nome1" value=<%=d.getNome()%> ><br> 
 										<label>Cognome</label><br><input type="text" name="cognome1" value=<%=d.getCognome()%>><br> 
 										<label>Username</label><br> <input type="text" name="username1" value=<%=d.getUsername()%> ><br>
-										<label>Password</label><br> <input type="text" name="password1" value=<%=d.getPassword()%>><br>
+										<label>Password</label><br> <input type="password" name="password1" ><br>
 										<label>Posizione</label><br> <input type="text" name="posizione1" value=<%=d.getRuolo()%>><br> 
 										<label>Stipendio</label><br><input type="text" name="stipendio1" value=<%=d.getStipendio()%> ><br> 
 										<br><input type="hidden" value=<%=d.getId_utente()%>
