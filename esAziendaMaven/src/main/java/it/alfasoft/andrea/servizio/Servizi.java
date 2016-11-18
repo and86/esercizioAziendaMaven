@@ -61,7 +61,7 @@ public class Servizi {
 		Dipendente d = dDao.leggiDipendenteConUser(username);
 		return d;
 	}
-	
+
 	public Utente getUtenteConId(long id_u) {
 		Utente u = uDao.leggiUtenteConId(id_u);
 		return u;
@@ -75,13 +75,13 @@ public class Servizi {
 	public List<Dipendente> getListDipendenti() {
 		return dDao.leggiTuttiDipendenti();
 	}
-	
-	//Metodi per aggiornare cliente e dipendente
+
+	// Metodi per aggiornare cliente e dipendente
 	public boolean aggiornaCliente(Cliente c) {
 		cDao.leggiClienteConId(c.getId_utente());
 		return cDao.aggiornaCliente(c);
 	}
-	
+
 	public boolean aggiornaDipendente(Dipendente d) {
 		return dDao.aggiornaDipendente(d);
 	}
@@ -98,15 +98,15 @@ public class Servizi {
 	public boolean eliminaUtenteConId(long id_u) {
 		return uDao.eliminaUtenteConId(id_u);
 	}
-	
+
 	public boolean eliminaClienteConId(long id_c) {
-		Cliente c=cDao.leggiClienteConId(id_c);
+		Cliente c = cDao.leggiClienteConId(id_c);
 		uDao.eliminaUtenteConId(id_c);
 		return cDao.eliminaCliente(c);
 	}
-	
+
 	public boolean eliminaDipendenteConId(long id_d) {
-		Dipendente d=dDao.leggiDipendenteConId(id_d);
+		Dipendente d = dDao.leggiDipendenteConId(id_d);
 		uDao.eliminaUtenteConId(id_d);
 		return dDao.eliminaDipendente(d);
 	}
@@ -121,6 +121,7 @@ public class Servizi {
 	public boolean creaBustaPaga(BustaPaga b) {
 		return bDao.creaBustaPaga(b);
 	}
+
 
 	// Lista Buste paga dipendente
 	public List<BustaPaga> getListBuste(Dipendente d) {

@@ -71,7 +71,7 @@ if (cliente.isValid()) {
 <jsp:include page=".././footer.jsp"></jsp:include>
 
 
-</div>
+
 <!--/.fluid-container-->
 
 <!--      includo tutti script di sotto -->

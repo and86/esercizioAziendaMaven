@@ -68,19 +68,19 @@
 								</div>
 
 								<div class="controls">
-									<select data-placeholder="Dipendente" id="selection"
+									<select name="id_dipendente" data-placeholder="Dipendente" id="selection"
 										data-rel="chosen" style="width: 200px;" form="bustaPaga">
 										
 										<option value=""></option>
 										<%
 											Servizi s = new Servizi();
-												List<Dipendente> lista = s.getListDipendenti();
-												session.setAttribute("lista", lista);
+											List<Dipendente> lista = s.getListDipendenti();
+											session.setAttribute("lista", lista);
 										%>
 										
 										<c:forEach items="${lista}" var="u">
 
-											<option><c:out value="${u.cognome} ${u.nome}" /> </option>
+											<option value="${u.id_utente}"> <c:out value="${u.cognome}"/> <c:out value="${u.nome}" /> </option>
 <%-- 											<input type="hidden" value="${u.id_utente}" name="id_utente">		 --%>
 
 										</c:forEach>
