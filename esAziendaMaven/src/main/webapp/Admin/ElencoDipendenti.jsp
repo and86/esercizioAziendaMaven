@@ -96,20 +96,20 @@
 											<td class="center"><c:out value="${u.stipendio}" /></td>
 											<td class="center">
 
-												<form action="ModificaDipendente.jsp" method="post"
+												<form id="formModifiche" action="ModificaDipendente.jsp" method="post"
 													style="float: left;">
 													<input type="hidden" value="${u.id_utente}"
 														name="id_utente" />
-													<button type="submit" class="btn btn-info">
+													<button type="submit" class="btn btn-info" id="editDipendenti">
 														Edit <i class="glyphicon glyphicon-edit icon-white"></i>
 													</button>
 													&nbsp;
 												</form>
 
-												<form action="doCancellaDipendente.jsp" method="post">
+												<form id="formElimina" action="doCancellaDipendente.jsp" method="post">
 													<input type="hidden" value="${u.id_utente}"
 														name="id_utente" />
-													<button type="submit" class="btn btn-danger">
+													<button type="submit" id="deleteDipendenti" class="btn btn-danger">
 														Delete <i class="glyphicon glyphicon-trash icon-white"></i>
 													</button>
 												</form>

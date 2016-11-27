@@ -19,6 +19,12 @@ public class Admin extends Utente implements Serializable,ValidaDati {
 	private String livelloAccesso;
 
 	public Admin() {
+		setNome("");
+		setCognome("");
+		setUsername("");
+		setPassword("");
+		setRuolo(' ');
+		this.livelloAccesso = "admin";
 	}
 
 	public Admin(String nome,String cognome,String username,String password, char ruolo,String livelloAccesso) {
