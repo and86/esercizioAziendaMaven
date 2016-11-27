@@ -20,6 +20,8 @@
 	scope="session" />
 <jsp:useBean id="messaggio"
 	class="it.alfasoft.andrea.utility.MessaggioBean" scope="request" />
+	
+	<script type="text/javascript" src="edit.js"></script>
 
 <%
 	if (admin.isValid()) {
@@ -128,7 +130,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 </div>
 
 <hr>

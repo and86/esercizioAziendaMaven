@@ -3,7 +3,7 @@ function confirmDeleteDipendente(){
 	var result = confirm ("Vuoi davvero eliminare questo utente?");
 	
 	if (result == true){
-		document.getElementById("formModifiche").action = "doEliminaDipendente.jsp";
+		document.getElementById("formElimina").action = "doCancellaDipendente.jsp";
 	}
 }
 
@@ -13,7 +13,7 @@ function confirmDeleteCliente(){
 	var result = confirm ("Vuoi davvero eliminare questo utente?");
 	
 	if (result == true){
-		document.getElementById("formModifiche").action = "doCancellaCliente.jsp";
+		document.getElementById("formElimina").action = "doCancellaCliente.jsp";
 	}
 }
 
